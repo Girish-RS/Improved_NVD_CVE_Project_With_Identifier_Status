@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CVE LIST</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="page-header">
+    <h1>CVE LIST</h1>
+  </div>
+  <div class="container">
+    <div class="top-row">
+      <div class="total">Total Records: <span id="total">0</span></div>
+      <div class="controls-right">
+        <button id="sync">Sync (fetch 100)</button>
+      </div>
+    </div>
+
+    <table id="cve-table">
+      <thead>
+        <tr>
+          <th>CVE ID</th>
+          <th>IDENTIFIER</th>
+          <th>PUBLISHED DATE</th>
+          <th>LAST MODIFIED DATE</th>
+          <th>STATUS</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="bottom-row">
+      <div class="results-per-page">Results per page: <select id="resultsPerPage"><option value="10">10</option><option value="50">50</option><option value="100">100</option></select></div>
+      <div class="pager">
+        <button id="prev">◀</button>
+        <span id="page">1</span>
+        <button id="next">▶</button>
+      </div>
+      <div class="records-range"><span id="range">0 - 0 of 0 records</span></div>
+    </div>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>

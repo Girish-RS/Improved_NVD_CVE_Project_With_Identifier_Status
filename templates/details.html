@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CVE Details</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #fff; margin: 30px; }
+    h1 { font-size: 22px; margin-bottom: 10px; }
+    h2 { font-size: 16px; margin-top: 25px; margin-bottom: 6px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 5px; margin-bottom: 15px; }
+    th, td { border: 1px solid #ccc; padding: 6px 8px; font-size: 13px; text-align: left; }
+    .section { margin-bottom: 20px; }
+    .label { font-weight: bold; }
+    .back { margin-bottom: 15px; display: inline-block; }
+  </style>
+</head>
+<body>
+  <a href="/cves/list" class="back">← Back to CVE List</a>
+
+  <div class="section">
+    <h1 id="cve-id"></h1>
+    <div><span class="label">Description:</span> <span id="desc"></span></div>
+  </div>
+
+  <div class="section" id="cvss-v2-section" style="display:none;">
+    <h2>CVSS V2 Metrics:</h2>
+    <div><b>Severity:</b> <span id="severity"></span> &nbsp;&nbsp; <b>Score:</b> <span id="score"></span></div>
+    <div><b>Vector String:</b> <span id="vector"></span></div>
+    <table id="metrics-table">
+      <thead>
+        <tr>
+          <th>Access Vector</th>
+          <th>Access Complexity</th>
+          <th>Authentication</th>
+          <th>Confidentiality Impact</th>
+          <th>Integrity Impact</th>
+          <th>Availability Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="accessVector"></td>
+          <td id="accessComplexity"></td>
+          <td id="authentication"></td>
+          <td id="confImpact"></td>
+          <td id="integImpact"></td>
+          <td id="availImpact"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section" id="scores-section" style="display:none;">
+    <h2>Scores:</h2>
+    <div>Exploitability Score: <span id="exploit"></span></div>
+    <div>Impact Score: <span id="impact"></span></div>
+  </div>
+
+  <div class="section" id="cpe-section" style="display:none;">
+    <h2>CPE:</h2>
+    <table id="cpe-table">
+      <thead>
+        <tr>
+          <th>Criteria</th>
+          <th>Match Criteria ID</th>
+          <th>Vulnerable</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>const cveId = "{{ cve_id }}";</script>
+  <script src="/static/script.js"></script>
+</body>
+</html>
